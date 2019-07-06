@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 93e408d52ff8849aa9ebe271467a5487
+=======
+guid: 8f318831dc5937f4ea7ccf6853912bad
+>>>>>>> new old backdrop
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
