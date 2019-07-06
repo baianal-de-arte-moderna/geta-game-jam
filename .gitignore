@@ -139,3 +139,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/unity,macos,linux,windows,visualstudiocode
+
+**/sandbox.unity*
+*.swp
+*.swo
