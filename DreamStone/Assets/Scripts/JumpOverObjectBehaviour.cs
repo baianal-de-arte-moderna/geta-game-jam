@@ -14,9 +14,8 @@ public class JumpOverObjectBehaviour : BaseBehaviour
 
     private Vector3 initialPosition;
 
-    protected override void Start()
+    protected void Awake()
     {
-        base.Start();
         rigidbody = GetComponent<Rigidbody>();
         initialPosition = transform.position;
     }
@@ -51,8 +50,8 @@ public class JumpOverObjectBehaviour : BaseBehaviour
         {
             hasJumped = true;
             isAirBorn = true;
-            rigidbody.AddForce(transform.up * 200f);
-            rigidbody.AddForce(transform.forward * 50f);
+            rigidbody.AddForce(transform.up * 225f);
+            rigidbody.AddForce(transform.forward * 75f);
         }
     }
 
@@ -61,7 +60,7 @@ public class JumpOverObjectBehaviour : BaseBehaviour
         if (isAirBorn)
         {
             isAirBorn = false;
-            rigidbody.AddForce(transform.forward * -50f);
+            rigidbody.AddForce(transform.forward * -75f);
         }
     }
 
@@ -77,5 +76,14 @@ public class JumpOverObjectBehaviour : BaseBehaviour
 
             rigidbody.velocity = Vector3.zero;
         }
+    }
+
+    private void OnEnable()
+    {
+        hasLookedAt = false;
+        hasJumped = false;
+        isAirBorn = false;
+
+        rigidbody.velocity = Vector3.zero;
     }
 }
