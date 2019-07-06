@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: PlayerTestScene
   thoughts: {fileID: 5098872204495155435}
+  sceneTransition: {fileID: 0}
 --- !u!1001 &4244387266804174372
 PrefabInstance:
   m_ObjectHideFlags: 0
