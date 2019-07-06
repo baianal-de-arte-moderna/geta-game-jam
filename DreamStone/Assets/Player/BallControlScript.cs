@@ -22,7 +22,7 @@ public class BallControlScript : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100.0f, layerMask))
+        if (Physics.Raycast(ray, out hit, 500.0f, layerMask))
         {
             transform.position = Vector3.Lerp(
                 transform.position,
