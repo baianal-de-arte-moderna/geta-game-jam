@@ -11,6 +11,7 @@ public class JumpOverObjectBehaviour : BaseBehaviour
     private bool hasLookedAt = false;
     private bool hasJumped = false;
     private bool isAirBorn = false;
+    private bool wasInactive = false;
 
     private Vector3 initialPosition;
 
@@ -22,16 +23,26 @@ public class JumpOverObjectBehaviour : BaseBehaviour
 
     public override bool InterruptChain()
     {
-        return false;
+        return true;
     }
 
     public override bool IsActive()
     {
-        return GameObject.FindWithTag(jumpedOverObjectTag) != null;
+        bool foundObject = GameObject.FindWithTag(jumpedOverObjectTag) != null;
+        if (!foundObject)
+        {
+            wasInactive = true;
+        }
+        return foundObject || isAirBorn;
     }
 
     public override void Iterate()
     {
+        if (wasInactive && !isAirBorn)
+        {
+            Reset();
+        }
+
         if (!hasLookedAt)
         {
             hasLookedAt = true;
@@ -42,6 +53,15 @@ public class JumpOverObjectBehaviour : BaseBehaviour
 
             rigidbody.AddForce(transform.forward * 100f);
         }
+    }
+
+    private void Reset()
+    {
+        hasLookedAt = false;
+        hasJumped = false;
+        isAirBorn = false;
+
+        rigidbody.velocity = Vector3.zero;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,22 +88,13 @@ public class JumpOverObjectBehaviour : BaseBehaviour
     {
         if (other.CompareTag("Respawn"))
         {
-            hasLookedAt = false;
-            hasJumped = false;
-            isAirBorn = false;
-
+            Reset();
             transform.position = initialPosition;
-
-            rigidbody.velocity = Vector3.zero;
         }
     }
 
     private void OnEnable()
     {
-        hasLookedAt = false;
-        hasJumped = false;
-        isAirBorn = false;
-
-        rigidbody.velocity = Vector3.zero;
+        Reset();
     }
 }
