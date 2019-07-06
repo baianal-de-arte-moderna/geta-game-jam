@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class BedInteractionScript : MonoBehaviour
 {
+    BedBehaviourScript currentBed;
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            currentBed?.Interact();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bed"))
         {
-            var bed = other.GetComponent<BedBehaviourScript>();
-            bed?.Select();
+            currentBed?.Unselect();
+            currentBed = other.GetComponent<BedBehaviourScript>();
+            currentBed?.Select();
         }
     }
 
@@ -18,8 +28,8 @@ public class BedInteractionScript : MonoBehaviour
     {
         if (other.CompareTag("Bed"))
         {
-            var bed = other.GetComponent<BedBehaviourScript>();
-            bed?.Unselect();
+            currentBed?.Unselect();
+            currentBed = null;
         }
     }
 }

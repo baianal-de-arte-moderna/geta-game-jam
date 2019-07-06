@@ -1,20 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BedBehaviourScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string sceneName;
 
     public void Select()
     {
@@ -24,5 +15,10 @@ public class BedBehaviourScript : MonoBehaviour
     public void Unselect()
     {
         transform.localScale /= 1.2f;
+    }
+
+    public void Interact()
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
