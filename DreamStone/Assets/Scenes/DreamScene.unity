@@ -513,6 +513,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dream_Room
       objectReference: {fileID: 0}
+    - target: {fileID: -9195807641641327649, guid: aeb7aafbda9712e4e9757a880edf66fa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cb776897d4af1409da9692e7ad8c0ea7, type: 2}
+    - target: {fileID: -8773591727234656462, guid: aeb7aafbda9712e4e9757a880edf66fa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 79cd46abfe16042ed9dbaecc1bfd477d, type: 2}
     - target: {fileID: -5245297785414550888, guid: aeb7aafbda9712e4e9757a880edf66fa,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -583,11 +593,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 79cd46abfe16042ed9dbaecc1bfd477d, type: 2}
+    - target: {fileID: -436498983394880741, guid: aeb7aafbda9712e4e9757a880edf66fa,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4276758145694439943, guid: aeb7aafbda9712e4e9757a880edf66fa,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0ffaa0b7117ba8c47a9d05ae701d4b4d, type: 2}
+      objectReference: {fileID: 2100000, guid: 44c32a379099b4585a4191277a2d61c1, type: 2}
     - target: {fileID: 7854776477739390678, guid: aeb7aafbda9712e4e9757a880edf66fa,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
