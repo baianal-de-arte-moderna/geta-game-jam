@@ -12,7 +12,7 @@ public abstract class BaseBehaviour : MonoBehaviour {
 
     public abstract void Iterate();
 
-    void Start() {
+    protected virtual void Start() {
         behaviourManager?.RegisterBehaviour(this);
     }
 }
