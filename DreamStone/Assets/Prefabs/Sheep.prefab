@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 572670922}
   - component: {fileID: 572670924}
   - component: {fileID: 572670925}
+  - component: {fileID: 572670929}
+  - component: {fileID: 572670930}
   m_Layer: 13
   m_Name: Sheep
   m_TagString: Untagged
@@ -117,6 +119,35 @@ MonoBehaviour:
   behaviourManager: {fileID: 572670922}
   priority: 0
   jumpedOverObjectTag: Fence
+--- !u!114 &572670929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3819636134819089982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745b77e849e748543925993516e0ad8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviourManager: {fileID: 572670922}
+  priority: 99
+--- !u!114 &572670930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3819636134819089982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eccb51bbfc4a224493a08b5d2f884d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviourManager: {fileID: 572670922}
+  priority: 98
+  maxWanders: 5
 --- !u!1 &7281854939035052963
 GameObject:
   m_ObjectHideFlags: 0
