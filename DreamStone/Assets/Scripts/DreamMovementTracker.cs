@@ -9,19 +9,18 @@ public class DreamMovementTracker : MonoBehaviour {
             Input.mousePosition, Camera.MonoOrStereoscopicEye.Mono);
 
         RaycastHit hoverObject;
-        if (Physics.Raycast(currentMouseRaycast, out hoverObject) ) {
+        if (Physics.Raycast(currentMouseRaycast, out hoverObject, 1000f, LayerMask.GetMask("Interactable")) ) {
             InteractableObject sceneItem = hoverObject.transform.
                 GetComponent<InteractableObject>();
 
-            if (sceneItem != null) {
-                if (currentlyFocusedItem != sceneItem) {
-                    currentlyFocusedItem?.ClearFocus();
-                    currentlyFocusedItem = sceneItem;
-                    sceneItem.SetFocus();
-                }
-            } else {
+            if (sceneItem == null) {
+                Debug.Log("ALL OBJECTS IN THE INTERACTABLE LAYER SHOULD BE INTERACTABLEOBJECTS YOU MORON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+
+            if (currentlyFocusedItem != sceneItem) {
                 currentlyFocusedItem?.ClearFocus();
-                currentlyFocusedItem = null;
+                currentlyFocusedItem = sceneItem;
+                sceneItem.SetFocus();
             }
         } else {
             currentlyFocusedItem?.ClearFocus();
