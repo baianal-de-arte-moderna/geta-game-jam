@@ -54,7 +54,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3026908844471333756}
   - component: {fileID: 8296172668893059696}
-  - component: {fileID: 8296172668893059694}
+  - component: {fileID: 196711686426591858}
+  - component: {fileID: 7670163352812920654}
   m_Layer: 13
   m_Name: Fance
   m_TagString: Fence
@@ -91,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.120677456, y: 0.5092344, z: 1.5375459}
   m_Center: {x: 0.037530743, y: 0.19210005, z: 0.07183332}
---- !u!114 &8296172668893059694
+--- !u!114 &196711686426591858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,9 +101,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2043196440689590639}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6dc7bb666f7f64982d6af7e1a292cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 60c8636738c72514fb3b237157a8b8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enlargeRatio: 10
+--- !u!114 &7670163352812920654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043196440689590639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678e350e76339c241a3bc3e86b4c311b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 196711686426591858}
 --- !u!1 &5500776383067825394
 GameObject:
   m_ObjectHideFlags: 0
