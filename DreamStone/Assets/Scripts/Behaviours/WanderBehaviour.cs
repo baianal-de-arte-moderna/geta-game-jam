@@ -2,24 +2,31 @@
 using UnityEngine;
 
 public class WanderBehaviour : BaseBehaviour {
-    [SerializeField] private int maxWanders;
 
-    private Rigidbody rigidbody;
+    [SerializeField]
+    private int maxWanders;
+
+    private new Rigidbody rigidbody;
     private int wanderCount;
     private float lastActionTime;
+    private Vector3 force;
 
-    protected override void Start() {
-        base.Start();
+    private void Awake() {
         rigidbody = GetComponent<Rigidbody>();
         lastActionTime = 0f;
     }
 
-    public override bool InterruptChain() {
-        return true;
+    public override bool IsActive() {
+        bool isActive = (wanderCount < maxWanders) || (TimeSinceLastAction() > 5);
+        if (!isActive) {
+            rigidbody.AddForce(-force);
+            force = Vector3.zero;
+        }
+        return isActive;
     }
 
-    public override bool IsActive() {
-        return (wanderCount < maxWanders) || (TimeSinceLastAction() > 5);
+    public override bool InterruptChain() {
+        return true;
     }
 
     public override void Iterate() {
@@ -28,18 +35,19 @@ public class WanderBehaviour : BaseBehaviour {
         }
 
         if (TimeSinceLastAction() > 1) {
-            if (rigidbody.velocity.magnitude > 0.01f) {
-                rigidbody.velocity = Vector3.zero;
-            } else if (wanderCount < maxWanders) {
-                Vector3 newPoint = RandomPointOnPlane(rigidbody.transform.position,
-                    rigidbody.transform.up, 1.0f);
-                Vector3 delta = newPoint - rigidbody.transform.position;
-
-                delta.Normalize();
+            if (force != Vector3.zero) {
+                rigidbody.AddForce(-force);
+                force = Vector3.zero;
+            } else {
+                Vector3 newPoint = RandomPointOnPlane(transform.position, transform.up, 1.0f);
                 transform.LookAt(newPoint);
-                rigidbody.AddForce(delta * 25f);
+
+                force = transform.forward * 25f;
+                rigidbody.AddForce(force);
+
                 wanderCount++;
             }
+
             lastActionTime = Time.time;
         }
     }
@@ -49,15 +57,9 @@ public class WanderBehaviour : BaseBehaviour {
     }
 
     private Vector3 RandomPointOnPlane(Vector3 position, Vector3 normal, float radius) {
-        Vector3 randomPoint;
-        do {
-            randomPoint = Vector3.Cross(Random.insideUnitSphere, normal);
-        } while (randomPoint == Vector3.zero);
-
-        randomPoint.Normalize();
+        Vector3 randomPoint = Vector3.Cross(Random.insideUnitSphere, normal);
         randomPoint *= radius;
         randomPoint += position;
-
         return randomPoint;
     }
 }

@@ -10,13 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 241306566273645613}
   - component: {fileID: 2688070013723196763}
-  - component: {fileID: 1350280109943413712}
   - component: {fileID: 572670923}
-  - component: {fileID: 572670922}
   - component: {fileID: 572670924}
+  - component: {fileID: 572670922}
   - component: {fileID: 572670925}
-  - component: {fileID: 572670929}
   - component: {fileID: 572670930}
+  - component: {fileID: 572670929}
   m_Layer: 13
   m_Name: Sheep
   m_TagString: Untagged
@@ -52,18 +51,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.92624426, z: 0.7640374}
   m_Center: {x: 0, y: 0.40586448, z: 0.019790769}
---- !u!114 &1350280109943413712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3819636134819089982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6dc7bb666f7f64982d6af7e1a292cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &572670923
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -80,18 +67,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &572670922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3819636134819089982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 502bd7d7dd90e5c4f81bc6b1face3f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &572670924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +77,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba6dc7bb666f7f64982d6af7e1a292cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &572670922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3819636134819089982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502bd7d7dd90e5c4f81bc6b1face3f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &572670925
@@ -119,22 +106,9 @@ MonoBehaviour:
   behaviourManager: {fileID: 572670922}
   priority: 0
   jumpedOverObjectTag: Fence
+  walkForce: 100
   jumpForceUp: 225
-  jumpForceForward: 75
---- !u!114 &572670929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3819636134819089982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745b77e849e748543925993516e0ad8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviourManager: {fileID: 572670922}
-  priority: 99
+  jumpForceForward: 175
 --- !u!114 &572670930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +124,20 @@ MonoBehaviour:
   behaviourManager: {fileID: 572670922}
   priority: 98
   maxWanders: 5
+--- !u!114 &572670929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3819636134819089982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745b77e849e748543925993516e0ad8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviourManager: {fileID: 572670922}
+  priority: 99
 --- !u!1 &7281854939035052963
 GameObject:
   m_ObjectHideFlags: 0
