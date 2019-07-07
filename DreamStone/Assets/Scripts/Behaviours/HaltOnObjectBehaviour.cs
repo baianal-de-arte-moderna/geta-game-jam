@@ -7,20 +7,13 @@ public class HaltOnObjectBehaviour : BaseBehaviour {
     private string haltedOnObjectTag;
 
     private new Rigidbody rigidbody;
-    private Vector3 startVelocity;
+    private bool isActive;
 
     protected void Awake() {
         rigidbody = GetComponent<Rigidbody>();
     }
 
     public override bool IsActive() {
-        bool isActive = GameObject.FindWithTag(haltedOnObjectTag) != null;
-
-        if (!isActive && startVelocity != Vector3.zero) {
-            rigidbody.velocity = startVelocity;
-            startVelocity = Vector3.zero;
-        }
-
         return isActive;
     }
 
@@ -29,9 +22,13 @@ public class HaltOnObjectBehaviour : BaseBehaviour {
     }
 
     public override void Iterate() {
-        if (rigidbody.velocity != Vector3.zero) {
-            startVelocity = rigidbody.velocity;
-            rigidbody.velocity = Vector3.zero;
+        rigidbody.velocity = Vector3.zero;
+        isActive = false;
+    }
+
+    private void OnCollisionStay(Collision collision) {
+        if (collision.collider.CompareTag(haltedOnObjectTag)) {
+            isActive = true;
         }
     }
 }
