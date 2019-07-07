@@ -9,12 +9,12 @@ public class BedBehaviourScript : MonoBehaviour
     public void Select()
     {
         thoughts.gameObject.SetActive(true);
-        thoughts.SetTrigger("FadeIn");
+        thoughts.SetBool("Fade", true);
     }
 
     public void Unselect()
     {
-        thoughts.SetTrigger("FadeOut");
+        thoughts.SetBool("Fade", false);
     }
 
     public void Interact()

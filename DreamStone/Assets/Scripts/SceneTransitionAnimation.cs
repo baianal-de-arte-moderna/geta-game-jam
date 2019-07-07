@@ -9,10 +9,19 @@ public class SceneTransitionAnimation : MonoBehaviour
     Color targetColor;
     public Image panel;
     public float transitionSpeed;
+    public bool startFade;
     // Start is called before the first frame update
     void Start()
     {
-        targetColor = Color.clear;
+        gameObject.SetActive(true);
+        if (startFade)
+        {
+            targetColor = Color.clear;
+        }
+        else
+        {
+            targetColor = panel.color;
+        }
     }
 
     // Update is called once per frame
