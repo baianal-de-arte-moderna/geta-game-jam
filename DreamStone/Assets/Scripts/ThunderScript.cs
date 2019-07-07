@@ -17,7 +17,7 @@ public class ThunderScript : MonoBehaviour
         light.color = Color.Lerp(
             light.color,
             Color.clear,
-            0.2f
+            0.1f
         );
     }
 
