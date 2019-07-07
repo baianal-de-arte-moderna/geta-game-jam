@@ -119,6 +119,8 @@ MonoBehaviour:
   behaviourManager: {fileID: 572670922}
   priority: 0
   jumpedOverObjectTag: Fence
+  jumpForceUp: 225
+  jumpForceForward: 75
 --- !u!114 &572670929
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bed
   - Fence
+  - Cliff
   layers:
   - Default
   - TransparentFX

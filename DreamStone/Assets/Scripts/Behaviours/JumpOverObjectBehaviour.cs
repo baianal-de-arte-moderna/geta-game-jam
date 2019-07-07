@@ -5,6 +5,12 @@ public class JumpOverObjectBehaviour : BaseBehaviour
     [SerializeField]
     private string jumpedOverObjectTag;
 
+    [SerializeField]
+    private float jumpForceUp;
+
+    [SerializeField]
+    private float jumpForceForward;
+
     private new Rigidbody rigidbody;
     private Vector3 rotationVector = new Vector3();
 
@@ -70,8 +76,8 @@ public class JumpOverObjectBehaviour : BaseBehaviour
         {
             hasJumped = true;
             isAirBorn = true;
-            rigidbody.AddForce(transform.up * 225f);
-            rigidbody.AddForce(transform.forward * 75f);
+            rigidbody.AddForce(transform.up * jumpForceUp);
+            rigidbody.AddForce(transform.forward * jumpForceForward);
         }
     }
 
@@ -80,7 +86,7 @@ public class JumpOverObjectBehaviour : BaseBehaviour
         if (isAirBorn)
         {
             isAirBorn = false;
-            rigidbody.AddForce(transform.forward * -75f);
+            rigidbody.AddForce(transform.forward * -jumpForceForward);
         }
     }
 
