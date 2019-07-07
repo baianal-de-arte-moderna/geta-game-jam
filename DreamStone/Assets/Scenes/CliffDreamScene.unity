@@ -497,6 +497,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7640723041985600523, guid: a509056c75ef1418e8298eafba6d8b32,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cliff
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a509056c75ef1418e8298eafba6d8b32, type: 3}
 --- !u!1001 &3858999720883455807
@@ -566,6 +571,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3926910136600652448, guid: 5a6dc6b38cebd47aba6f2c8d8bd37b55,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 8121540860886315937, guid: 5a6dc6b38cebd47aba6f2c8d8bd37b55,
         type: 3}
       propertyPath: m_IsActive
@@ -593,7 +603,7 @@ PrefabInstance:
     - target: {fileID: 4074500918745698051, guid: 4ef62d8155c4e4eadb5c7e2c908d3f8a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.829
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 4074500918745698051, guid: 4ef62d8155c4e4eadb5c7e2c908d3f8a,
         type: 3}
