@@ -9,7 +9,7 @@ public class SheepAnimatorControlScript : MonoBehaviour
     public float depreTimer;
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
         animator.SetFloat("Velocity", rigid.velocity.magnitude);
         animator.SetBool("Jumping", rigid.velocity.y > 1f);
