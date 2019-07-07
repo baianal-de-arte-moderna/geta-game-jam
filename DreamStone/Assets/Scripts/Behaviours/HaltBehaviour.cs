@@ -2,23 +2,23 @@
 using UnityEngine;
 
 public class HaltBehaviour : BaseBehaviour {
-    private Rigidbody rigidbody;
 
-    public override bool InterruptChain() {
-        return true;
+    private new Rigidbody rigidbody;
+
+    private void Awake() {
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     public override bool IsActive() {
         return true;
     }
 
-    protected override void Start() {
-        base.Start();
-        rigidbody = GetComponent<Rigidbody>();
+    public override bool InterruptChain() {
+        return true;
     }
 
     public override void Iterate() {
-        rigidbody.velocity = Vector3.Dot(rigidbody.velocity, rigidbody.transform.up) * rigidbody.transform.up;
+        rigidbody.velocity = Vector3.zero;
     }
 }
 

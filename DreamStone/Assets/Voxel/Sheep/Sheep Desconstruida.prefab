@@ -318,13 +318,12 @@ GameObject:
   m_Component:
   - component: {fileID: 49347740992564392}
   - component: {fileID: 2791083767492013534}
-  - component: {fileID: 1246144776744602453}
   - component: {fileID: 285444803351778126}
-  - component: {fileID: 285444803351778127}
   - component: {fileID: 285444803351778121}
+  - component: {fileID: 285444803351778127}
   - component: {fileID: 285444803351778120}
-  - component: {fileID: 285444803351778132}
   - component: {fileID: 285444803351778135}
+  - component: {fileID: 285444803351778132}
   - component: {fileID: 473734552}
   - component: {fileID: 473734553}
   m_Layer: 13
@@ -366,18 +365,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.58914375, y: 0.7938924, z: 0.7640374}
   m_Center: {x: 0.00541687, y: 0.4152174, z: 0.019790769}
---- !u!114 &1246144776744602453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3959799157753028283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6dc7bb666f7f64982d6af7e1a292cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &285444803351778126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -394,18 +381,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &285444803351778127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3959799157753028283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 502bd7d7dd90e5c4f81bc6b1face3f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &285444803351778121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,6 +391,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba6dc7bb666f7f64982d6af7e1a292cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &285444803351778127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959799157753028283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502bd7d7dd90e5c4f81bc6b1face3f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &285444803351778120
@@ -433,20 +420,9 @@ MonoBehaviour:
   behaviourManager: {fileID: 285444803351778127}
   priority: 0
   jumpedOverObjectTag: Fence
---- !u!114 &285444803351778132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3959799157753028283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745b77e849e748543925993516e0ad8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviourManager: {fileID: 285444803351778127}
-  priority: 99
+  walkForce: 100
+  jumpForceUp: 225
+  jumpForceForward: 175
 --- !u!114 &285444803351778135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +438,20 @@ MonoBehaviour:
   behaviourManager: {fileID: 285444803351778127}
   priority: 98
   maxWanders: 5
+--- !u!114 &285444803351778132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959799157753028283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745b77e849e748543925993516e0ad8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviourManager: {fileID: 285444803351778127}
+  priority: 99
 --- !u!95 &473734552
 Animator:
   serializedVersion: 3
