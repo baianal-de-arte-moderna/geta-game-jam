@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BehaviourManager : MonoBehaviour {
-    
+
     private SortedDictionary<int, BaseBehaviour> m_behaviours = new SortedDictionary<int, BaseBehaviour>();
-    
-    void FixedUpdate() {
+
+    private void FixedUpdate() {
         foreach (BaseBehaviour behaviour in m_behaviours.Values) {
             if (behaviour.IsActive()) {
                 behaviour.Iterate();
@@ -22,7 +22,7 @@ public class BehaviourManager : MonoBehaviour {
             Debug.Log("Priority conflict registering behaviour {0}", behaviour);
             throw new System.Exception(string.Format("Priority conflict registering behaviour {0}", behaviour));
         }
-        
+
         m_behaviours[behaviour.priority] = behaviour;
     }
 }

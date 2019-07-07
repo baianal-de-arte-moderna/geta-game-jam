@@ -6,7 +6,7 @@ public static class PlayerInventory {
 
     private static GameObject selectedObject { get; set; }
 
-    public static bool hasObject { get { return selectedObject != null; } }
+    public static bool hasObject => selectedObject != null;
 
     public static void PickObject(GameObject obj) {
         if (selectedObject == null) {

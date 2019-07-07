@@ -1,19 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ThunderScript : MonoBehaviour
-{
-    new Light light;
+public class ThunderScript : MonoBehaviour {
+    private new Light light;
+
     // Start is called before the first frame update
-    void Start()
-    {
+    private void Start() {
         light = GetComponent<Light>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    private void Update() {
         light.color = Color.Lerp(
             light.color,
             Color.clear,
@@ -21,13 +17,11 @@ public class ThunderScript : MonoBehaviour
         );
     }
 
-    public void Flash(float delay)
-    {
+    public void Flash(float delay) {
         Invoke("Flash", delay);
     }
 
-    public void Flash()
-    {
+    public void Flash() {
         light.color = Color.white;
     }
 }

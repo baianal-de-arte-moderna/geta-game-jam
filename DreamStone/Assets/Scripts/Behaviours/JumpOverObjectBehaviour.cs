@@ -1,7 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class JumpOverObjectBehaviour : BaseBehaviour
-{
+public class JumpOverObjectBehaviour : BaseBehaviour {
     [SerializeField]
     private string jumpedOverObjectTag;
 
@@ -21,36 +20,29 @@ public class JumpOverObjectBehaviour : BaseBehaviour
 
     private Vector3 initialPosition;
 
-    protected void Awake()
-    {
+    protected void Awake() {
         rigidbody = GetComponent<Rigidbody>();
         initialPosition = transform.position;
     }
 
-    public override bool InterruptChain()
-    {
+    public override bool InterruptChain() {
         return true;
     }
 
-    public override bool IsActive()
-    {
+    public override bool IsActive() {
         bool foundObject = GameObject.FindWithTag(jumpedOverObjectTag) != null;
-        if (!foundObject)
-        {
+        if (!foundObject) {
             wasInactive = true;
         }
         return foundObject || isAirBorn;
     }
 
-    public override void Iterate()
-    {
-        if (wasInactive && !isAirBorn)
-        {
+    public override void Iterate() {
+        if (wasInactive && !isAirBorn) {
             Reset();
         }
 
-        if (!hasLookedAt)
-        {
+        if (!hasLookedAt) {
             hasLookedAt = true;
 
             GameObject jumpedOverObject = GameObject.FindWithTag(jumpedOverObjectTag);
@@ -61,8 +53,7 @@ public class JumpOverObjectBehaviour : BaseBehaviour
         }
     }
 
-    private void Reset()
-    {
+    private void Reset() {
         hasLookedAt = false;
         hasJumped = false;
         isAirBorn = false;
@@ -70,10 +61,8 @@ public class JumpOverObjectBehaviour : BaseBehaviour
         rigidbody.velocity = Vector3.zero;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag(jumpedOverObjectTag) && !hasJumped)
-        {
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag(jumpedOverObjectTag) && !hasJumped) {
             hasJumped = true;
             isAirBorn = true;
             rigidbody.AddForce(transform.up * jumpForceUp);
@@ -81,26 +70,21 @@ public class JumpOverObjectBehaviour : BaseBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (isAirBorn)
-        {
+    private void OnCollisionEnter(Collision collision) {
+        if (isAirBorn) {
             isAirBorn = false;
             rigidbody.AddForce(transform.forward * -jumpForceForward);
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Respawn"))
-        {
+    private void OnTriggerExit(Collider other) {
+        if (other.CompareTag("Respawn")) {
             Reset();
             transform.position = initialPosition;
         }
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         Reset();
     }
 }

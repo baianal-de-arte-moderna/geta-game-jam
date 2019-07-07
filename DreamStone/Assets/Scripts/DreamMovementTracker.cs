@@ -4,12 +4,11 @@ public class DreamMovementTracker : MonoBehaviour {
 
     public InteractableObject currentlyFocusedItem { get; private set; }
 
-    void Update() {
+    private void Update() {
         Ray currentMouseRaycast = Camera.main.ScreenPointToRay(
             Input.mousePosition, Camera.MonoOrStereoscopicEye.Mono);
 
-        RaycastHit hoverObject;
-        if (Physics.Raycast(currentMouseRaycast, out hoverObject, 1000f, LayerMask.GetMask("Interactable")) ) {
+        if (Physics.Raycast(currentMouseRaycast, out RaycastHit hoverObject, 1000f, LayerMask.GetMask("Interactable"))) {
             InteractableObject sceneItem = hoverObject.transform.
                 GetComponent<InteractableObject>();
 
