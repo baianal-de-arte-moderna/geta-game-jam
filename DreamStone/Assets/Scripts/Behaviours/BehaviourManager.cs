@@ -6,7 +6,7 @@ public class BehaviourManager : MonoBehaviour {
     
     private SortedDictionary<int, BaseBehaviour> m_behaviours = new SortedDictionary<int, BaseBehaviour>();
     
-    void Update() {
+    void FixedUpdate() {
         foreach (BaseBehaviour behaviour in m_behaviours.Values) {
             if (behaviour.IsActive()) {
                 behaviour.Iterate();
