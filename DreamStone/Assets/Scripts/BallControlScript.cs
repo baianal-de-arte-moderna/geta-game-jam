@@ -1,29 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BallControlScript : MonoBehaviour
-{
+public class BallControlScript : MonoBehaviour {
     public string navigationPlaneLayer;
     public GameObject player;
+    private Transform playerInstance;
+    private int layerMask;
 
-    Transform playerInstance;
-    int layerMask;
     // Start is called before the first frame update
-    void Start()
-    {
+    private void Start() {
         playerInstance = Instantiate(player).transform;
         playerInstance.SetParent(transform);
         layerMask = LayerMask.GetMask(navigationPlaneLayer);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        RaycastHit hit;
+    private void Update() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 500.0f, layerMask))
-        {
+        if (Physics.Raycast(ray, out RaycastHit hit, 500.0f, layerMask)) {
             transform.position = Vector3.Lerp(
                 transform.position,
                 hit.point,

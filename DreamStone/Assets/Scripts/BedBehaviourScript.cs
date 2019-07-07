@@ -1,24 +1,20 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class BedBehaviourScript : MonoBehaviour
-{
+public class BedBehaviourScript : MonoBehaviour {
     public string sceneName;
     public Animator thoughts;
     public SceneTransitionAnimation sceneTransition;
 
-    public void Select()
-    {
+    public void Select() {
         thoughts.gameObject.SetActive(true);
         thoughts.SetBool("Fade", true);
     }
 
-    public void Unselect()
-    {
+    public void Unselect() {
         thoughts.SetBool("Fade", false);
     }
 
-    public void Interact()
-    {
+    public void Interact() {
         sceneTransition.ChangeScene(sceneName);
     }
 }

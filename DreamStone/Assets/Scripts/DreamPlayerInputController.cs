@@ -5,15 +5,14 @@ public class DreamPlayerInputController : MonoBehaviour {
     [Tooltip("The movement tracker instance for the current scene")]
     public DreamMovementTracker movementTracker;
 
-    void Update() {
+    private void Update() {
         if (Input.GetMouseButtonDown(0)) {
             if (movementTracker?.currentlyFocusedItem != null) {
                 PlayerInventory.PickObject(movementTracker.currentlyFocusedItem.gameObject);
             } else {
                 Ray placementRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                RaycastHit placement;
-                if (Physics.Raycast(placementRay, out placement, 1000f,
+                if (Physics.Raycast(placementRay, out RaycastHit placement, 1000f,
                     LayerMask.GetMask("Scenario"))) {
                     PlayerInventory.DropObjectAt(placement.point);
                 }
