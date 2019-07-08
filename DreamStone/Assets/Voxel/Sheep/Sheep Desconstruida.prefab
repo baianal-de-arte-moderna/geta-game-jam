@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 7203222519929125550}
   - component: {fileID: 5635387542844267838}
   - component: {fileID: 285444803351778127}
+  - component: {fileID: 3505776720354455695}
   - component: {fileID: 285444803351778120}
   - component: {fileID: 285444803351778135}
   - component: {fileID: 285444803351778132}
@@ -420,6 +421,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502bd7d7dd90e5c4f81bc6b1face3f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3505776720354455695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959799157753028283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed8facf3c5dc457c8e1a5846a345914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviourManager: {fileID: 285444803351778127}
+  priority: 0
+  walkedTowardsObjectTag: Haystack
+  walkForce: 100
+  objectReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 473734553}
+        m_MethodName: Eat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: ObjectReachedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &285444803351778120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviourManager: {fileID: 285444803351778127}
-  priority: 0
+  priority: 1
   jumpedOverObjectTag: Fence
   walkForce: 100
   jumpForceUp: 225
