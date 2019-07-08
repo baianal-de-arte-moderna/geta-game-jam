@@ -9,7 +9,7 @@ public class OrphanageCameraScript : MonoBehaviour
     public float speed = 10f;
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Input.mousePosition.x >= Screen.width * 0.9 && transform.localRotation.eulerAngles.y < maxAngle)
         {
