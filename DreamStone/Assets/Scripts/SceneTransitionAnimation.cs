@@ -28,6 +28,11 @@ public class SceneTransitionAnimation : MonoBehaviour {
         );
     }
 
+    public void StartGame() {
+        DreamManager.Reload();
+        ChangeScene("OrphanageScene");
+    }
+
     public void ChangeScene(string sceneName) {
         targetColor = Color.black;
         StartCoroutine(LoadScene(sceneName));

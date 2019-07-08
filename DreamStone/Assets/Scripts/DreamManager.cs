@@ -30,6 +30,18 @@ public class DreamManager : MonoBehaviour {
 
     private void Awake() {
         if (!loaded) {
+            if (sheepWrapper != null) {
+                Destroy(sheepWrapper.gameObject);
+            }
+
+            if (fenceWrapper != null) {
+                Destroy(fenceWrapper.gameObject);
+            }
+
+            if (haystackWrapper != null) {
+                Destroy(haystackWrapper.gameObject);
+            }
+
             sheepWrapper = InstantiateGlobal(sheepPrefab, "DreamScene");
             fenceWrapper = InstantiateGlobal(fencePrefab, "DreamScene");
             haystackWrapper = InstantiateGlobal(haystackPrefab, "CliffDreamScene");
@@ -43,6 +55,10 @@ public class DreamManager : MonoBehaviour {
         }
 
         SceneManager.LoadScene("HUDScene", LoadSceneMode.Additive);
+    }
+
+    public static void Reload() {
+        loaded = false;
     }
 
     private void Update() {
