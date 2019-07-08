@@ -12,14 +12,15 @@ public static class PlayerInventory {
         if (selectedObject == null) {
             selectedObject = obj;
             selectedObject.SetActive(false);
-            Object.DontDestroyOnLoad(selectedObject);
+
+            DreamManager.PickObject(selectedObject);
         }
     }
 
     public static void DropObjectAt(Vector3 position) {
         if (selectedObject != null) {
-            SceneManager.MoveGameObjectToScene(selectedObject,
-                SceneManager.GetActiveScene());
+            DreamManager.DropObject(selectedObject);
+
             selectedObject.transform.position = position;
             selectedObject.SetActive(true);
             selectedObject = null;
