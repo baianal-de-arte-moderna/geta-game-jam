@@ -13,16 +13,31 @@ public class DreamManager : MonoBehaviour {
     [SerializeField]
     private GameObject haystackPrefab;
 
+    [SerializeField]
+    private GameObject dreamStuff = null;
+
+    [SerializeField]
+    private GameObject nightmareStuff = null;
+
     private static bool loaded = false;
+
+    private static GameObjectWrapper sheepWrapper;
+    private static GameObjectWrapper fenceWrapper;
+    private static GameObjectWrapper haystackWrapper;
     private static List<GameObjectWrapper> wrappers;
+
     private static string sceneName;
 
     private void Awake() {
         if (!loaded) {
+            sheepWrapper = InstantiateGlobal(sheepPrefab, "DreamScene");
+            fenceWrapper = InstantiateGlobal(fencePrefab, "DreamScene");
+            haystackWrapper = InstantiateGlobal(haystackPrefab, "CliffDreamScene");
+
             wrappers = new List<GameObjectWrapper> {
-                InstantiateGlobal(sheepPrefab, "DreamScene"),
-                InstantiateGlobal(fencePrefab, "DreamScene"),
-                InstantiateGlobal(haystackPrefab, "CliffDreamScene"),
+                sheepWrapper,
+                fenceWrapper,
+                haystackWrapper,
             };
             loaded = true;
         }
@@ -35,6 +50,14 @@ public class DreamManager : MonoBehaviour {
             foreach (GameObjectWrapper wrapper in wrappers) {
                 wrapper.gameObject.SetActive(wrapper.instanceSceneName == sceneName);
             }
+        }
+
+        if (dreamStuff != null) {
+            dreamStuff.SetActive(IsDream());
+        }
+
+        if (nightmareStuff != null) {
+            nightmareStuff.SetActive(!IsDream());
         }
     }
 
@@ -74,7 +97,24 @@ public class DreamManager : MonoBehaviour {
         return wrapper;
     }
 
-    public class GameObjectWrapper {
+    private static bool IsDream() {
+        bool isDream = false;
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        List<GameObjectWrapper> sceneWrappers = wrappers.FindAll((GameObjectWrapper wrapper) => wrapper.instanceSceneName == currentSceneName);
+        switch (currentSceneName) {
+            case "DreamScene":
+                isDream = sceneWrappers.Contains(sheepWrapper) && (sceneWrappers.Contains(fenceWrapper) || sceneWrappers.Contains(haystackWrapper));
+                break;
+            case "CliffDreamScene":
+                isDream = sceneWrappers.Contains(fenceWrapper);
+                break;
+        }
+
+        return isDream;
+    }
+
+    private class GameObjectWrapper {
         public GameObject gameObject;
         public string instanceSceneName;
     }

@@ -72,7 +72,7 @@ public class JumpOverObjectBehaviour : BaseBehaviour {
     }
 
     private void SetState(State newState) {
-        Debug.Log($"Change state from {state} to {newState}");
+        //Debug.Log($"Change state from {state} to {newState}");
 
         this.state = newState;
         switch (state) {
