@@ -29,12 +29,12 @@ public class SceneTransitionAnimation : MonoBehaviour {
     }
 
     public void ChangeScene(string sceneName) {
-        targetColor = Color.white;
+        targetColor = Color.black;
         StartCoroutine(LoadScene(sceneName));
     }
 
     private IEnumerator LoadScene(string name) {
-        yield return new WaitForSeconds(0.1f / transitionSpeed);
+        yield return new WaitForSeconds(0.2f / transitionSpeed);
         SceneManager.LoadScene(name);
     }
 }
