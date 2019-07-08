@@ -24,4 +24,8 @@ public class SheepAnimatorControlScript : MonoBehaviour
         }
         animator.SetBool("Depre", depreTimer > 2f);
     }
+
+    public void Eat(bool eat) {
+        animator.SetBool("Eat", eat);
+    }
 }

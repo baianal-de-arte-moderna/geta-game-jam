@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4378132456539863929}
   m_Layer: 13
   m_Name: Haystack
-  m_TagString: Untagged
+  m_TagString: Haystack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

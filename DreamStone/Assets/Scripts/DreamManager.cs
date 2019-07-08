@@ -59,6 +59,10 @@ public class DreamManager : MonoBehaviour {
         if (nightmareStuff != null) {
             nightmareStuff.SetActive(!IsDream());
         }
+
+        if (IsDream("DreamScene") && IsDream("CliffDreamScene")) {
+            SceneManager.LoadScene("CreditsScene");
+        }
     }
 
     public static void PickObject(GameObject pickedGameObject) {
@@ -98,9 +102,13 @@ public class DreamManager : MonoBehaviour {
     }
 
     private static bool IsDream() {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        return IsDream(currentSceneName);
+    }
+
+    private static bool IsDream(string currentSceneName) {
         bool isDream = false;
 
-        string currentSceneName = SceneManager.GetActiveScene().name;
         List<GameObjectWrapper> sceneWrappers = wrappers.FindAll((GameObjectWrapper wrapper) => wrapper.instanceSceneName == currentSceneName);
         switch (currentSceneName) {
             case "DreamScene":
