@@ -40,7 +40,7 @@ public class WalkForwardBehaviour : BaseBehaviour {
     }
 
     private void SetState(State newState) {
-        Debug.Log($"Change state from {state} to {newState}");
+        //Debug.Log($"Change state from {state} to {newState}");
 
         state = newState;
         switch (state) {
