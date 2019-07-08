@@ -292,6 +292,24 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1 &883385145 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6584714035621922260, guid: 5a6dc6b38cebd47aba6f2c8d8bd37b55,
+    type: 3}
+  m_PrefabInstance: {fileID: 3858999720883455807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &883385146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883385145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af8c1760cae0bb4bbb2519139382009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1267619949
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +679,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5384053831813350466, guid: 5a6dc6b38cebd47aba6f2c8d8bd37b55,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0444
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384053831813350466, guid: 5a6dc6b38cebd47aba6f2c8d8bd37b55,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.20363551
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384053831813350466, guid: 5a6dc6b38cebd47aba6f2c8d8bd37b55,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5383
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384053831813350466, guid: 5a6dc6b38cebd47aba6f2c8d8bd37b55,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.09818556
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073443758111940653, guid: 5a6dc6b38cebd47aba6f2c8d8bd37b55,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c0e316544b29464a96e949d634a9ae1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a6dc6b38cebd47aba6f2c8d8bd37b55, type: 3}
 --- !u!4 &3858999720883455808 stripped
