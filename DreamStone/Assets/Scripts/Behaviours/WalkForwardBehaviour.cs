@@ -33,7 +33,7 @@ public class WalkForwardBehaviour : BaseBehaviour {
     public override void Iterate() {
         if (state == State.Dead) {
             accumulatedTime += Time.deltaTime;
-            if (accumulatedTime > 5f) {
+            if (accumulatedTime > 1f) {
                 SetState(State.Idle);
             }
         }
@@ -46,6 +46,7 @@ public class WalkForwardBehaviour : BaseBehaviour {
         switch (state) {
             case State.Idle:
                 transform.position = startPosition;
+                rigidbody.velocity = Vector3.zero;
                 break;
             case State.Walking:
                 rigidbody.AddForce(-force);
@@ -63,7 +64,11 @@ public class WalkForwardBehaviour : BaseBehaviour {
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.CompareTag("Cliff") && state == State.Idle) {
             SetState(State.Walking);
-        } else if (collision.collider.CompareTag("Floor") && state == State.Walking) {
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.CompareTag("Respawn")) {
             SetState(State.Dead);
         }
     }
