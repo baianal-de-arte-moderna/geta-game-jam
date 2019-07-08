@@ -41,6 +41,8 @@ public class DreamManager : MonoBehaviour {
             };
             loaded = true;
         }
+
+        SceneManager.LoadScene("HUDScene", LoadSceneMode.Additive);
     }
 
     private void Update() {
@@ -87,6 +89,26 @@ public class DreamManager : MonoBehaviour {
         }
 
         droppedGameObjectWrapper.instanceSceneName = SceneManager.GetActiveScene().name;
+    }
+
+    public static string GetPickedObjectType() {
+        GameObjectWrapper pickedObjectWrapper = null;
+        foreach (GameObjectWrapper wrapper in wrappers) {
+            if (wrapper.instanceSceneName == "PlayerInventory") {
+                pickedObjectWrapper = wrapper;
+                break;
+            }
+        }
+
+        if (pickedObjectWrapper == sheepWrapper) {
+            return "sheep";
+        } else if (pickedObjectWrapper == fenceWrapper) {
+            return "fence";
+        } else if (pickedObjectWrapper == haystackWrapper) {
+            return "haystack";
+        }
+
+        return null;
     }
 
     private GameObjectWrapper InstantiateGlobal(GameObject prefab, string instanceSceneName) {
