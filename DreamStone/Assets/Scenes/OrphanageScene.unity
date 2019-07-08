@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731725, g: 0.13414752, b: 0.121078566, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2521,15 +2521,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1738349380, guid: 8ac14ecbf7c9ae34b83a828a0f65075d, type: 3}
-      propertyPath: sceneTransition
-      value: 
-      objectReference: {fileID: 96907612}
     - target: {fileID: 3106238745909267550, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9f609e42610fd6441948210b81eb53b5, type: 2}
+    - target: {fileID: 1738349380, guid: 8ac14ecbf7c9ae34b83a828a0f65075d, type: 3}
+      propertyPath: sceneTransition
+      value: 
+      objectReference: {fileID: 96907612}
+    - target: {fileID: 8483751189066942342, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483751189066942342, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483751189066942342, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483751189066942342, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.152
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483751189066942342, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483751189066942343, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ac14ecbf7c9ae34b83a828a0f65075d, type: 3}
 --- !u!33 &264188172978707775
@@ -3251,6 +3281,36 @@ PrefabInstance:
     - target: {fileID: 1738349380, guid: 8ac14ecbf7c9ae34b83a828a0f65075d, type: 3}
       propertyPath: sceneName
       value: CliffDreamScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483751189066942342, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483751189066942342, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483751189066942342, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483751189066942342, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.187
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483751189066942342, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483751189066942343, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ac14ecbf7c9ae34b83a828a0f65075d, type: 3}

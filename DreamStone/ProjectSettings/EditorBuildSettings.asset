@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CliffDreamScene.unity
     guid: f4840c5587e6043a9a6c10eed7625087
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: b625f086693a4fd4c83df52654f56dff
   m_configObjects: {}
