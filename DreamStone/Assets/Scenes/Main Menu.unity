@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18326975, g: 0.22697577, b: 0.29511014, a: 1}
+  m_IndirectSpecularColor: {r: 0.18326995, g: 0.22697636, b: 0.29511085, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -430,15 +430,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1738349380, guid: 8ac14ecbf7c9ae34b83a828a0f65075d, type: 3}
+      propertyPath: sceneTransition
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3106238745909267550, guid: 8ac14ecbf7c9ae34b83a828a0f65075d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9f609e42610fd6441948210b81eb53b5, type: 2}
-    - target: {fileID: 1738349380, guid: 8ac14ecbf7c9ae34b83a828a0f65075d, type: 3}
-      propertyPath: sceneTransition
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ac14ecbf7c9ae34b83a828a0f65075d, type: 3}
 --- !u!4 &198649668 stripped
@@ -1725,8 +1725,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 230426794}
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: StartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
