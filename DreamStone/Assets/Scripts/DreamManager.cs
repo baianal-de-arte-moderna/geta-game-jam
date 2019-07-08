@@ -63,8 +63,13 @@ public class DreamManager : MonoBehaviour {
         }
 
         if (IsDream("DreamScene") && IsDream("CliffDreamScene")) {
-            SceneManager.LoadScene("CreditsScene");
+            Invoke("GoToCredits", 2f);
         }
+    }
+
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene("CreditsScene");
     }
 
     public static void PickObject(GameObject pickedGameObject) {
