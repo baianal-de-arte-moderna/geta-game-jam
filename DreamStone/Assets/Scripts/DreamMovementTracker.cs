@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class DreamMovementTracker : MonoBehaviour {
 
-    public InteractableObject currentlyFocusedItem { get; private set; }
+    public class FocusedObject {
+        public InteractableObject focusedGameObject;
+        public Vector3 focusedWorldPoint;
+    }
+    public FocusedObject currentlyFocusedItem { get; private set; }
+
+    private void Start() {
+        currentlyFocusedItem = null;
+    }
 
     private void Update() {
         Ray currentMouseRaycast = Camera.main.ScreenPointToRay(
@@ -14,15 +22,20 @@ public class DreamMovementTracker : MonoBehaviour {
 
             if (sceneItem == null) {
                 Debug.Log("ALL OBJECTS IN THE INTERACTABLE LAYER SHOULD BE INTERACTABLEOBJECTS YOU MORON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                return;
             }
 
-            if (currentlyFocusedItem != sceneItem) {
-                currentlyFocusedItem?.ClearFocus();
-                currentlyFocusedItem = sceneItem;
-                sceneItem.SetFocus();
+            if (currentlyFocusedItem == null) {
+                currentlyFocusedItem = new FocusedObject();
+            } else {
+                currentlyFocusedItem.focusedGameObject.ClearFocus();
             }
+
+            currentlyFocusedItem.focusedGameObject = sceneItem;
+            currentlyFocusedItem.focusedWorldPoint = hoverObject.point;
+            sceneItem.SetFocus();
         } else {
-            currentlyFocusedItem?.ClearFocus();
+            currentlyFocusedItem?.focusedGameObject.ClearFocus();
             currentlyFocusedItem = null;
         }
     }

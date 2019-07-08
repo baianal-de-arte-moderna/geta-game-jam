@@ -86,8 +86,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4378132455578704068}
-  - component: {fileID: 4378132456539863929}
   - component: {fileID: 1217975468283759356}
+  - component: {fileID: 4378132456539863930}
+  - component: {fileID: 4378132456539863929}
   m_Layer: 13
   m_Name: Haystack
   m_TagString: Untagged
@@ -110,18 +111,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4378132456539863929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4378132455578704069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6dc7bb666f7f64982d6af7e1a292cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1217975468283759356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -135,3 +124,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.005, y: 0.005, z: 0.008}
   m_Center: {x: 0, y: 0.0025, z: 0}
+--- !u!114 &4378132456539863930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378132455578704069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678e350e76339c241a3bc3e86b4c311b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 4378132456539863929}
+--- !u!114 &4378132456539863929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378132455578704069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c8636738c72514fb3b237157a8b8f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enlargeRatio: 10
